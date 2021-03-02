@@ -1,0 +1,7 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, label: 'What is your cocktail called', error: 'Name is mandatory, please specify one' %>
+  <%= f.submit 'Save' %>
+<% end %>
+
+
+<%= link_to 'Back', cocktails_path %>
