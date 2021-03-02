@@ -1,43 +1,55 @@
 
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
+
+<div class="main-container">
+
+ <div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+
+ <p><strong>Name:</strong>
+    <%= @cocktail.name %>
+    </p>
+
+  <p><%= "#{@dose.description} #{@dose.ingredient}" %>
 </p>
 
-
-<p>
-  <strong>Doses:</strong>
-  <%= "#{@dose.description} #{@dose.ingredient}" %>
-</p>
-
-
-<% @cocktail.doses.each do |dose| %>
-  <p>
-    <%= "#{dose.ingredient.name} #{dose.description}" %>
-    <%= link_to 'Delete', cocktail_path, method: :delete, data: { confirm: 'Sure?'} %>
-    <hr>
-  </p>
-<% end %>
-
-
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8">
-
-
-    <h1>Add doses to the cocktail:</h1>
-
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.input :description, placeholder: "describe your dose" %>
-    <%= f.association :ingredient %>
-    <%= f.submit "add dose", class: 'btn btn-primary' %>
-    <% end %>
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
-<%= link_to 'Back to all cocktails', cocktails_path %>
 
 
 
+
+  <% @cocktail.doses.each do |dose| %>
+    <p>
+      <%= "#{dose.ingredient.name} #{dose.description}" %>
+      <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Sure?'} %>
+    </p>
+  <% end %>
+
+
+ <hr>
+
+
+
+
+ <div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+      <p><strong>Add doses to the cocktail:</strong></p>
+
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description, placeholder: "describe your dose" %>
+      <%= f.association :ingredient %>
+      <%= f.submit "add dose", class: "btn btn-outline-light btn-lg" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </div>
+</div>

@@ -1,8 +1,27 @@
-<ul>
-  <%@cocktails.each do | cocktail| %>
-  <li><%= cocktail.name %></li>
-  <% end %>
-</ul>
 
 
-<%= link_to 'New Cocktail', new_cocktail_path %>
+
+
+
+  <div class="main-container">
+
+<div class="cards">
+      <%@cocktails.each do | cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= link_to cocktail["name"], cocktail_path(cocktail['id']) %>
+  </div>
+    <% end %>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
