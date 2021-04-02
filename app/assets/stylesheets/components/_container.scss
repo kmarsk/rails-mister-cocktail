@@ -4,10 +4,23 @@ padding-top: 30px;
 }
 
 .main-container {
-padding: 100px;
-background-color: #f8f1f1;
+  padding: 100px;
+  background-color: #f8f1f1;
+}
 
+
+.containerbox{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  flex-grow: 3;
+  justify-content: space-around;
 
 }
 
+.item {
+  width: 500px;
+  padding: 50px;
+  text-align: center;
+}
 
