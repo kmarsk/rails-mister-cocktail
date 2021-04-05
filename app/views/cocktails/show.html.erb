@@ -9,7 +9,7 @@
       </p>
         <% @cocktail.doses.each do |dose| %>
         <p>
-        <%= "#{dose.ingredient.name} #{dose.description}" %>
+        <%="#{dose.ingredient.name}: #{dose.description}" %>
         <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Sure?'}, class: "btn btn-outline-secondary" %>
        </p>
         <% end %>
