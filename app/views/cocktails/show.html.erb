@@ -3,6 +3,8 @@
     <div class="item ">
      <h2><strong><%= @cocktail.name %></strong>
      </h2>
+     <br>
+     <h4><strong>Ingredients:</strong></h4>
       <p><%= "#{@dose.description} #{@dose.ingredient}" %>
       </p>
         <% @cocktail.doses.each do |dose| %>
@@ -29,7 +31,7 @@
         <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.input :description, placeholder: "describe your dose" %>
         <%= f.association :ingredient %>
-        <%= f.submit "add dose", class: "btn btn-outline-secondary" %>
+        <%= f.submit "Add", class: "btn btn-outline-secondary" %>
         <% end %>
         <br>
         <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-outline-secondary" %>
