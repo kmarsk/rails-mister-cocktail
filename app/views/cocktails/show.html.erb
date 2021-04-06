@@ -9,7 +9,7 @@
       </p>
         <% @cocktail.doses.each do |dose| %>
         <p>
-        <%= "#{dose.ingredient.name} #{dose.description}" %>
+        <%="#{dose.ingredient.name}: #{dose.description}" %>
         <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Sure?'}, class: "btn btn-outline-secondary" %>
        </p>
         <% end %>
@@ -17,16 +17,16 @@
 
 
       <div class="item ">
-      <img class="img", alt="Le Wagon"
-         src="https://images.unsplash.com/photo-1541807456792-67393c00912c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1347&q=80%27" />
-      </div>
+       <%= cl_image_tag("mae-mu-YdN-kUtnOEQ-unsplash_bpcijk",
+      width: 400, height: 400) %>
+      <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-lg btn-outline-secondary btn-block" %></div>
 
       <div class="separator"></div>
 
 
 
       <div class="item" style="width: 800px">
-        <h3><strong>Add doses to the cocktail:</strong></h3>
+        <h3><strong>Add to your cocktail:</strong></h3>
 
         <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.input :description, placeholder: "describe your dose" %>
@@ -34,7 +34,7 @@
         <%= f.submit "Add", class: "btn btn-outline-secondary" %>
         <% end %>
         <br>
-        <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-outline-secondary" %>
+
       </div>
  </div>
 </div>
