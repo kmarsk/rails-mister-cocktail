@@ -17,16 +17,16 @@
 
 
       <div class="item ">
-        <%= cl_image_tag("old-fashioned-cocktail_uw8u5y",
-      width: 400, height: 300, crop: :fill) %>
-      </div>
+       <%= cl_image_tag("mae-mu-YdN-kUtnOEQ-unsplash_bpcijk",
+      width: 400, height: 400) %>
+      <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-lg btn-outline-secondary btn-block" %></div>
 
       <div class="separator"></div>
 
 
 
       <div class="item" style="width: 800px">
-        <h3><strong>About your cocktail:</strong></h3>
+        <h3><strong>Add to your cocktail:</strong></h3>
 
         <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.input :description, placeholder: "describe your dose" %>
@@ -34,7 +34,7 @@
         <%= f.submit "Add", class: "btn btn-outline-secondary" %>
         <% end %>
         <br>
-        <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-outline-secondary" %>
+
       </div>
  </div>
 </div>
