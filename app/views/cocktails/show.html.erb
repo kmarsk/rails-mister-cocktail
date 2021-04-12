@@ -17,8 +17,7 @@
 
 
       <div class="item ">
-       <%= cl_image_tag("mae-mu-YdN-kUtnOEQ-unsplash_bpcijk",
-      width: 400, height: 400) %>
+       <%= cl_image_tag @cocktail.photo.key, width: 400, height: 400 %>
       <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-lg btn-outline-secondary btn-block" %></div>
 
       <div class="separator"></div>
